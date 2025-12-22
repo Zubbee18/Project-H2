@@ -13,8 +13,19 @@ body{
 }
 
 h1,h2,h3,h4,h5{
-    font-weight;600;
+    font-weight:600;
     letter-spaccing: -0.02em;
+}
+
+.btn{
+    background-color: var(--primary-color);
+    border-color: none;
+    padding: 0.4rem 1.0rem;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    border-color: none;
 }
 
 .btn-primary {
@@ -53,7 +64,7 @@ section {
 
 
 .form {
-    border-radis:6 px;
+    border-radius:6 px;
     padding: 0.6rem;
 }
 
