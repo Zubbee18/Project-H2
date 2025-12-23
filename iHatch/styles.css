@@ -7,6 +7,7 @@
     --text-muted: #6b7280;
     --bg-light: #34dfdf;
     --border-light: #e5e7eb;
+    --texts-color:#ffffff;
     }
 
 
@@ -19,6 +20,7 @@ body{
 h1,h2,h3,h4,h5{
     font-weight:600;
     letter-spaccing: -0.02em;
+    padding:2rem;
 }
 
 nav{
@@ -65,12 +67,27 @@ section {
 }
 
 .hero {
-    /* background-color: var(--background-color); */
-    background-image: url("");
-    background-repeat: repeat-y;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+  min-height: 50vh;
+  background-image: url("./assets/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: var(--texts-color);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .card {
@@ -101,4 +118,11 @@ a:hover {
 .footer {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.432);
     padding:2.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 40vh;
+    text-align: centre;
+  }
 }
