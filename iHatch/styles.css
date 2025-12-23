@@ -124,6 +124,11 @@ a:hover {
     padding:2.5rem;
 }
 
+/*experts*/
+section .container{
+    padding:1.0rem 0;
+}
+
 @media (max-width: 768px) {
   .hero {
     min-height: 60vh;
