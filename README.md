@@ -2,7 +2,6 @@
 
 ## Project Structure
 
-├── Afrohedonist/  
 ├── iHatch/  
     |---assets/
     |-- book-expert.html
@@ -14,6 +13,9 @@
     |-- index.js
     |-- nav.html
     |-- styles.css
-├── Spurt! merch  
+├── Spurt! merch 
+assets/
+index..html
+style.css
 ├── SpurtX! bundle  
 └── README.md # Project documentation

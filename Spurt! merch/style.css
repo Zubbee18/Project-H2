@@ -255,7 +255,7 @@ button:hover {
 
 /* Footer */
 footer {
-    --background-color:var(--background-color);
+    background-color:var(--background-color);
     color: black;
     text-align: center;
     padding: 2rem 0;
