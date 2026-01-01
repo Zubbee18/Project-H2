@@ -135,50 +135,52 @@ footer .footer-note {
   opacity: 0.7;
 }
 
-/* SpurtX! Thank You (Add-on) */
-
+/* SpurtX! Thank You Page*/
 .thank-you-container {
   min-height: 100vh;
-  display: flex;
-  align-items: centre;
-  justify-content: centre;
-  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-image: url("assets/celebration.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 .thank-you-card {
-  max-width: 640px;
+  padding: 3rem;
+  max-width: 520px;
+  margin: auto;
   background: #f8f9fb;
   border-radius: 24px;
-  text-align: centre;
+  text-align: center;
   overflow: hidden;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
 }
 
-/* Image strip (contrasting colour) */
-.thank-you-image {
-  background: linear-gradient(135deg, #009051, #ff9600);
-  padding: 3rem 2rem;
-}
-
-.thank-you-image img {
-  max-width: 220px;
-  width: 100%;
-}
-
-/* Text */
-.thank-you-card h1 {
-  margin: 2rem 2rem 1rem;
-}
-
 .thank-you-card p {
-  margin: 0 2rem 2.5rem;
+  margin: 1rem 0 2rem;
   color: #334155;
 }
 
-/* Button (inherits existing button styles) */
-.thank-you-card .back-home {
+.back-home {
   display: inline-block;
-  margin-bottom: 2.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #B9D656;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .thank-you-section {
+    grid-template-columns: 1fr;
+  }
+
+  .thank-you-image {
+    min-height: 220px;
+  }
 }
 
 /* Responsive tweaks */
