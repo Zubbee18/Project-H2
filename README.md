@@ -26,4 +26,7 @@ Project documentation for iHatch, Spurt! merch and SpurtX!
     - style.css
     - thankyou.html
 
+  - **main.js**
+      <p>Global js file</p>
+
   - **README.md**
