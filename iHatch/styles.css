@@ -144,18 +144,8 @@ div .card-text p{
     min-height: 60vh;
     text-align: center;
   }
-  hero p{
-    margin: 20px;
-  }
-
-  .how-it-works p{
-    margin: 25px;
-  }
-  .testimonials .container{
+  section container{
     margin: 25px;
   }
 
-  p{
-    margin: 20px;
-  }
 }
