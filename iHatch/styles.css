@@ -144,7 +144,7 @@ div .card-text p{
     min-height: 60vh;
     text-align: center;
   }
-  .button {
-
+  div p{
+    border: 20px;
   }
 }
