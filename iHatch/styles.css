@@ -145,17 +145,17 @@ div .card-text p{
     text-align: center;
   }
   hero p{
-    border: 20px;
+    margin: 20px;
   }
 
   .how-it-works p{
-    border: 25px;
+    margin: 25px;
   }
   .testimonials .container{
-    border: 25px;
+    margin: 25px;
   }
 
   p{
-    border:20px;
+    margin: 20px;
   }
 }
