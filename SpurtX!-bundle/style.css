@@ -13,7 +13,7 @@ body {
   background-color: #f8f9fb;
 }
 
-/* Header */
+/* Header */  
 header {
   background-color: white;
   padding: 0.5rem 1rem;
@@ -174,7 +174,7 @@ footer .footer-note {
 
 /* Mobile */
 @media (max-width: 768px) {
-  .thank-you-section {
+  .thank-you-card {
     grid-template-columns: 1fr;
   }
 
