@@ -22,35 +22,42 @@ h1,h2,h3,h4,h5{
     letter-spacing: -0.02em;
 }
 
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 nav{
     padding:5vh 2rem;
 }
 
-.btn{
-    background-color: var(--primary-color);
-    border-color: none;
-    padding: 0.4rem 1.0rem;
+.hero {
+  min-height: 80vh;
+  background-image: url("./assets/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: var(--texts-color);
+  border: 20px; 
 }
 
-.btn:hover {
-    background-color: var(--secondary-color);
-    border-color: none;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-.btn-primary {
-    background-color: var(--primary-color);
-    border-color: none;
-    padding: 0.6rem 1.2rem;
-}
-
-.btn-primary:hover {
-    background-color: var(--secondary-color);
-    border-color: none;
-}
-
-.btn-outline-primary {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
+.hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 section {
@@ -70,30 +77,6 @@ section {
 
 }
 
-.hero {
-  min-height: 80vh;
-  background-image: url("./assets/hero.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  position: relative;
-  color: var(--texts-color);
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.hero .container {
-  position: relative;
-  z-index: 1;
-}
-
 .card {
   border: 1px solid var(--border-light);
   border-radius: 8px;
@@ -106,17 +89,35 @@ section {
 
 
 .form {
-    border-radius:6 px;
+    border-radius:6px;
     padding: 0.6rem;
 }
 
-a {
-  color: var(--primary);
-  text-decoration: none;
+.btn{
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.4rem 1.0rem;
 }
 
-a:hover {
-  text-decoration: underline;
+.btn:hover {
+    background-color: var(--secondary-color);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.6rem 1.2rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border: none;
+}
+
+.btn-outline-primary {
+    border: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .footer {
@@ -142,5 +143,8 @@ div .card-text p{
   .hero {
     min-height: 60vh;
     text-align: center;
+  }
+  .button {
+
   }
 }
