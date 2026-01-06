@@ -144,7 +144,18 @@ div .card-text p{
     min-height: 60vh;
     text-align: center;
   }
-  div p{
+  hero p{
     border: 20px;
+  }
+
+  .how-it-works p{
+    border: 25px;
+  }
+  .testimonials .container{
+    border: 25px;
+  }
+
+  p{
+    border:20px;
   }
 }
