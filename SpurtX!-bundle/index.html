@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="icon" type="img/png" href="./assets/spurtx.png" />
     <title>SpurtX! Bundle</title>
   </head>
@@ -17,7 +17,7 @@
 
     <section class="hero">
       <h1>Ready to join SpurtX!</h1>
-      <button type="button" class="js-scroll" data-target="#signup">Sign up</button>
+      <button type="button" class="js-scroll" data-target=".signup">Sign up</button>
     </section>
 
     <section class="bundle">
@@ -31,7 +31,7 @@
         simplifies hiring, boosts productivity, enhances collaboration and keeps
         teams engaged. It is ideal for startups, SMEs and growing enterprises.
         SpurtX! helps you replace multiple disjointed apps with a single,
-        streamlined system. SpurtX! bundle <strong>£49</strong> Save over 30%
+        streamlined system. SpurtX! bundle <strong>$49</strong> Save over 30%
         compared to buying individually.<br /><br />
         Includes all SpurtX! features, premium updates, and priority support.
       </p>
@@ -80,16 +80,16 @@
           <i class="fas fa-box"></i>
           <h4>SPURTX! BUNDLE</h4>
           <p>
-            All tools included in one simple package — <strong>£49</strong>,
+            All tools included in one simple package — <strong>$49</strong>,
             better value than buying separately.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="signup" id="signup">
+    <section class="signup">
       <h2>Sign up for updates</h2>
-      <form action="./thankyou.html">
+      <form id="signupForm" action="./thankyou.html">
         <label>
           Name
           <input type="text" name="name" required />
@@ -113,9 +113,17 @@
         <button type="submit">Submit</button>
       </form>
     </section>
+
+  <!--Form Messages-->
+    <p id="successMsg" class="message success" style="display:none; color:green;"> Booking request sent! Check email </p>
+    <p id="errorMsg" class="message error" style="display:none; color:red;"> Error sending booking request. Please try again. </p>
+
   <footer>
     <p class="footer-note">© 2025 SpurtX! All rights reserved.</p>
   </footer>
-  <script src="../main.js"></script>
+
+  <!--Js Scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../main.js"></script>
   </body>
-</html>
+</html> 
