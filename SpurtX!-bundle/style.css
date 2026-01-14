@@ -115,6 +115,30 @@ section h2 {
   cursor: pointer;
 }
 
+/*Form Messages*/
+.message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: 300px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* success */
+.message.success {
+  background: #6cf1ba;
+  color: #0f5132;
+}
+
+/* error */
+.message.error {
+  background: #f1b2ab;
+  color: #842029;
+}
+
 /* Footer */
 footer {
   background: black;
