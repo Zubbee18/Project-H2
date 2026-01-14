@@ -59,22 +59,76 @@ nav{
   position: relative;
   z-index: 1;
 }
+.hero a {
+    color: var(--texts-color);
+}
 
 section {
     padding: 4rem 0;
 }
 
+.why-ihatch {
+    background-color: #f9f9f9; 
+}
+
+.why-ihatch .col-md-4>p {
+  text-align:center;
+  padding: 1rem;
+}
+
 .why-ihatch img {
   width: 100%;
-  max-width: 170px;
+  max-width: 190px;
   height: 120px;
   object-fit: cover;
   margin-bottom: 1rem;
+  border-radius: 50%;
 }
 
 .why-ihatch h2 {
   padding: 1rem;
+}
 
+.how-it-works {
+  background-color: #ffffff;
+  padding: 60px 0;
+}
+
+.how-it-works h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.step {
+  background-color: #f9f9f9; 
+  border-radius: 15px;
+  padding: 25px 20px;
+  transition: transform 0.2s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step .icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #4CAF50; 
+}
+
+.step h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.step p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  text-align: center;
 }
 
 .card {
@@ -91,6 +145,38 @@ section {
 .form {
     border-radius:6px;
     padding: 0.6rem;
+}
+
+/* Form Messages*/
+.formMsg{
+    text-align: center;
+    margin-top: 1rem;
+    display:none;
+}
+
+/*Form Messages*/
+
+.message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  max-width: 300px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* success */
+.message.success {
+  background: #e6f7f0;
+  color: #0f5132;
+}
+
+/* error */
+.message.error {
+  background: #fdecea;
+  color: #842029;
 }
 
 .btn{
