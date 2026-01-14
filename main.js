@@ -8,17 +8,17 @@ document.querySelectorAll(".js-scroll").forEach((btn) => {
   });
 });
  
-// Select popup and message once
+// Pop up for Spurt! Merch and Games
 const popup = document.getElementById("cartPopup");
 const message = document.getElementById("popupMessage");
 const closeBtn = document.querySelector(".close-popup");
 
 document.querySelectorAll(".add-to-cart").forEach((btn) => {
   btn.addEventListener("click", () => {
-    const product = btn.dataset.product || "Product";
+    const item = btn.dataset.item || "item";
 
     // Set message and show popup
-    message.textContent = `${product} added to cart!`;
+    message.textContent = `${item} added to cart!`;
     popup.style.display = "flex";
 
     // Auto-close after 2 seconds
@@ -35,38 +35,44 @@ if (closeBtn) {
   });
 }
 
-// /* Cart List */
-// const cart = [];
-// const cartImg = document.getElementById("cart");
-// const cartList = document.getElementById("cartList");
-// const cartItems = document.getElementById("cartItems");
+/* Cart List */
+const cart = [];
+const cartImg = document.getElementById("cart");
+const cartList = document.getElementById("cartList");
+const cartItems = document.getElementById("cartItems");
 
-// // Grab ALL add-to-cart buttons
-// const addToCartButtons = document.querySelectorAll(".add-to-cart");
+// Safety checks
+if (!cartImg || !cartList || !cartItems) {
+  console.error("Cart elements missing from HTML");
+}
 
-// // Add items when any add-to-cart button is clicked
-// addToCartButtons.forEach(button => {
-//   button.addEventListener("click", () => {
-//     const itemName = button.dataset.item;
-//     cart.push(itemName);
-//   });
-// });
+// Add-to-cart buttons
+document.querySelectorAll(".add-to-cart").forEach(button => {
+  button.addEventListener("click", () => {
+    const itemName = button.dataset.item;
 
-// // Toggle cart display
-// Cart.addEventListener("click", (e) => {
-//   e.preventDefault();
+    if (!itemName) return;
 
-//   cartList.style.display =
-//     cartList.style.display === "block" ? "none" : "block";
+    cart.push(itemName);
+    console.log("Cart:", cart);
+  });
+});
 
-//   cartItems.innerHTML = "";
+// Toggle cart display
+cartImg.addEventListener("click", (e) => {
+  e.preventDefault();
 
-//   cart.forEach(item => {
-//     const li = document.createElement("li");
-//     li.textContent = item;
-//     cartItems.appendChild(li);
-//   });
-// });
+  cartList.style.display =
+    cartList.style.display === "block" ? "none" : "block";
+
+  cartItems.innerHTML = "";
+
+  cart.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    cartItems.appendChild(li);
+  });
+});
 
 //  EmailJS for SpurtX
 emailjs.init("ylD6gHT_FXJye9QC1");

@@ -31,11 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
     errorMsg.style.display = "none";
 
     try {
+      console.log("Email about to send");
       await emailjs.sendForm(
         "service_0lvogu3",
         "template_3c936uo",
         form
       );
+      console.log("Email sent");
 
       successMsg.style.display = "block";
 
