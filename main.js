@@ -75,9 +75,9 @@ cartImg.addEventListener("click", (e) => {
 });
 
 //  EmailJS for SpurtX
-emailjs.init("ylD6gHT_FXJye9QC1");
-
 document.addEventListener("DOMContentLoaded", () => {
+  emailjs.init("ylD6gHT_FXJye9QC1");
+
   const form = document.getElementById("signupForm");
   const successMsg = document.getElementById("successMsg");
   const errorMsg = document.getElementById("errorMsg");
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       // Save to Google Sheet
-      await fetch(
+      const sheetRes = await fetch(
         "https://sheet2api.com/v1/6ifPMuBORP2y/demo-spreadsheet/SpurtXbundle",
         {
           method: "POST",
@@ -101,23 +101,35 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       );
 
+      if (!sheetRes.ok) {
+        throw new Error("Sheet save failed");
+      }
+
       // Send email
       console.log("Email about to send");
-      await emailjs.sendForm(
+      const emailRes = await emailjs.sendForm(
         "service_0lvogu3",
         "template_jj799eg",
         form
       );
+
+      if (emailRes.status !== 200) {
+        throw new Error("EmailJS failed");
+      }
+
       console.log("Email sent");
 
+      // Success UI + redirect
       successMsg.style.display = "block";
-      setTimeout(() => successMsg.style.display = "none", 5000);
       form.reset();
 
+      setTimeout(() => {
+        window.location.assign("./thankyou.html");
+      }, 800);
+
     } catch (err) {
-      console.error(err);
+      console.error(" Submission error:", err);
       errorMsg.style.display = "block";
-      setTimeout(() => errorMsg.style.display = "none", 5000);
     }
   });
 });
