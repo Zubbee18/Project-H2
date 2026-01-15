@@ -1,14 +1,4 @@
-//Button move to form in SpurtX! bundle
-document.querySelectorAll(".js-scroll").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const target = document.querySelector(btn.dataset.target);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-});
- 
-// Pop up for Spurt! Merch and Games
+ // Pop up for Spurt! Merch and Games
 const popup = document.getElementById("cartPopup");
 const message = document.getElementById("popupMessage");
 const closeBtn = document.querySelector(".close-popup");
@@ -71,65 +61,5 @@ cartImg.addEventListener("click", (e) => {
     const li = document.createElement("li");
     li.textContent = item;
     cartItems.appendChild(li);
-  });
-});
-
-//  EmailJS for SpurtX
-document.addEventListener("DOMContentLoaded", () => {
-  emailjs.init("ylD6gHT_FXJye9QC1");
-
-  const form = document.getElementById("signupForm");
-  const successMsg = document.getElementById("successMsg");
-  const errorMsg = document.getElementById("errorMsg");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    successMsg.style.display = "none";
-    errorMsg.style.display = "none";
-
-    const formData = new FormData(form);
-
-    try {
-      // Save to Google Sheet
-      const sheetRes = await fetch(
-        "https://sheet2api.com/v1/6ifPMuBORP2y/demo-spreadsheet/SpurtXbundle",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(Object.fromEntries(formData))
-        }
-      );
-
-      if (!sheetRes.ok) {
-        throw new Error("Sheet save failed");
-      }
-
-      // Send email
-      console.log("Email about to send");
-      const emailRes = await emailjs.sendForm(
-        "service_0lvogu3",
-        "template_jj799eg",
-        form
-      );
-
-      if (emailRes.status !== 200) {
-        throw new Error("EmailJS failed");
-      }
-
-      console.log("Email sent");
-
-      // Success UI + redirect
-      successMsg.style.display = "block";
-      form.reset();
-
-      setTimeout(() => {
-        window.location.assign("./thankyou.html");
-      }, 800);
-
-    } catch (err) {
-      console.error(" Submission error:", err);
-      errorMsg.style.display = "block";
-    }
   });
 });
