@@ -1,49 +1,30 @@
+// EmailJS Configuration Book Expert--step account
 document.addEventListener("DOMContentLoaded", () => {
-  const load = (selector, file) => {
-    fetch(file)
-      .then((response) => response.text())
-      .then((data) => {
-        document.querySelector(selector).innerHTML = data;
-      });
-  };
+  emailjs.init("Q9VOmeuf-NUopDT1A");
 
-  load("#nav", "nav.html");
-  load("#footer", "footer.html");
-});
-
-// EmailJS for book Hub form
-document.addEventListener("DOMContentLoaded", () => {
-  emailjs.init("ylD6gHT_FXJye9QC1");
-
-  const form = document.getElementById("hubForm");
+  const form = document.getElementById("formExpert");
   const successMsg = document.getElementById("successMsg");
   const errorMsg = document.getElementById("errorMsg");
 
-  if (!form || !successMsg || !errorMsg) {
-    console.error("Form or message elements missing");
-    return;
-  }
-
+  // Hide messages initially
   successMsg.style.display = "none";
   errorMsg.style.display = "none";
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
+    // Hide previous messages
     successMsg.style.display = "none";
     errorMsg.style.display = "none";
 
     try {
-      console.log("Email about to send");
-
+      console.log("about to send email");
       await emailjs.sendForm(
-        "service_0lvogu3",
-        "template_3c936uo",
+        "service_lfbpfn5",
+        "template_mnffu39",
         form
       );
-
       console.log("Email sent");
-
       successMsg.style.display = "block";
 
       setTimeout(() => {
@@ -51,10 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 5000);
 
       form.reset();
-
     } catch (err) {
-      console.error("EmailJS error:", err);
-
       errorMsg.style.display = "block";
 
       setTimeout(() => {
