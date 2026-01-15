@@ -55,6 +55,15 @@ section h2 {
   font-size: 1.5rem;
 }
 
+h4{
+  color: #ff9600;
+}
+
+b,strong{
+  color: #009051;
+  font-weight: 600;
+}
+
 /* Grid */
 .grid-container {
   display: grid;
@@ -225,8 +234,9 @@ footer .footer-note {
 
 .thank-you-card {
   padding: 3rem;
-  max-width: 520px;
+  max-width: 600px;
   margin: auto;
+  margin-left: 150px;
   background: #f8f9fb;
   border-radius: 24px;
   text-align: center;
@@ -257,6 +267,7 @@ footer .footer-note {
 
   .thank-you-image {
     min-height: 220px;
+    max-width:auto;
   }
 }
 
