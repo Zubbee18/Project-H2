@@ -12,31 +12,36 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // EmailJS for book Hub form
-emailjs.init("ylD6gHT_FXJye9QC1");
-
 document.addEventListener("DOMContentLoaded", () => {
+  emailjs.init("ylD6gHT_FXJye9QC1");
+
   const form = document.getElementById("hubForm");
   const successMsg = document.getElementById("successMsg");
   const errorMsg = document.getElementById("errorMsg");
 
-  // Hide messages initially
+  if (!form || !successMsg || !errorMsg) {
+    console.error("Form or message elements missing");
+    return;
+  }
+
   successMsg.style.display = "none";
   errorMsg.style.display = "none";
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    // Hide previous messages
     successMsg.style.display = "none";
     errorMsg.style.display = "none";
 
     try {
       console.log("Email about to send");
+
       await emailjs.sendForm(
         "service_0lvogu3",
         "template_3c936uo",
         form
       );
+
       console.log("Email sent");
 
       successMsg.style.display = "block";
@@ -46,7 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 5000);
 
       form.reset();
+
     } catch (err) {
+      console.error("EmailJS error:", err);
+
       errorMsg.style.display = "block";
 
       setTimeout(() => {
